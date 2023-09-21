@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 
 import './globals.css';
+
+import { fontSans } from '@/lib/fonts';
+import { cn } from '@/lib/utils';
 
 import { ThemeProvider } from '@/components/core/theme-provider';
 
 import { siteConfig } from '@/constant/siteconfig';
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
@@ -30,7 +31,12 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body className={inter.className}>
+      <body
+        className={cn(
+          'bg-background min-h-screen font-sans antialiased ',
+          fontSans.variable,
+        )}
+      >
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           {children}
         </ThemeProvider>
