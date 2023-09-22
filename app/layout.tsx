@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import './globals.css';
+import '@/style/globals.css';
 
 import { fontSans } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
@@ -30,12 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html suppressHydrationWarning>
       <body
-        className={cn(
-          'bg-background min-h-screen font-sans antialiased ',
-          fontSans.variable,
-        )}
+        className={cn('min-h-screen font-sans antialiased ', fontSans.variable)}
       >
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           {children}

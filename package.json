@@ -13,12 +13,15 @@
     "postinstall": "husky install"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "lucide-react": "^0.279.0",
     "next": "13.5.1",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwind-merge": "^1.14.0"
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
@@ -45,8 +48,8 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "next lint .",
-      "prettier -c ."
+      "prettier -w .",
+      "next lint ."
     ]
   }
 }
